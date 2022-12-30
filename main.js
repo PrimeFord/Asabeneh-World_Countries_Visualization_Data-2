@@ -2292,58 +2292,54 @@ countries_data.map((country) =>
 
 //Event Listeners
 btn1.addEventListener("click", () => {
-  input.addEventListener("input", () => {
-    arr1.style.display = "flex";
-    arr2.style.display = "none";
-    length = [];
-    btn1.style.background = "#581cb8";
-    btn2.style.background = "#895be6";
-    content.textContent = "";
-    for (let i = 0; i <= countries.length; i++) {
-      let no = countries[i].startsWith(input.value.toLocaleUpperCase());
-      if (no) {
-        content.innerHTML += `
+  arr1.style.display = "flex";
+  arr2.style.display = "none";
+  length = [];
+  btn1.style.background = "#581cb8";
+  btn2.style.background = "#895be6";
+  content.textContent = "";
+  for (let i = 0; i <= countries.length; i++) {
+    let no = countries[i].startsWith(input.value.toLocaleUpperCase());
+    if (no && input.value.length >= 1) {
+      content.innerHTML += `
         <p class="each">${countries[i]}</p>
         `;
-        length.push(countries[i]);
-      }
-
-      searchNo.textContent = `Countries that starts with ${input.value} are ${length.length}`;
+      length.push(countries[i]);
     }
-    for (const l of length) {
-      content.innerHTML += `
+
+    searchNo.textContent = `Countries that starts with ${input.value} are ${length.length}`;
+  }
+  for (const l of length) {
+    content.innerHTML += `
       <p class="each">${l}</p>
       `;
-    }
-  });
+  }
 });
 
 //
 btn2.addEventListener("click", () => {
-  input.addEventListener("input", () => {
-    arr1.style.display = "flex";
-    arr2.style.display = "none";
-    length = [];
-    btn2.style.background = "#581cb8";
-    btn1.style.background = "#895be6";
-    content.textContent = "";
-    for (let i = 0; i <= countries.length; i++) {
-      let no = countries[i].includes(input.value.toLocaleUpperCase());
-      if (no) {
-        content.innerHTML += `
+  arr1.style.display = "flex";
+  arr2.style.display = "none";
+  length = [];
+  btn2.style.background = "#581cb8";
+  btn1.style.background = "#895be6";
+  content.textContent = "";
+  for (let i = 0; i <= countries.length; i++) {
+    let no = countries[i].includes(input.value.toLocaleUpperCase());
+    if (no && input.value.length >= 1) {
+      content.innerHTML += `
         <p class="each">${countries[i]}</p>
         `;
-        length.push(countries[i]);
-      }
-
-      searchNo.textContent = `Countries that starts with ${input.value} are ${length.length}`;
+      length.push(countries[i]);
     }
-    for (const l of length) {
-      content.innerHTML += `
+
+    searchNo.textContent = `Countries that starts with ${input.value} are ${length.length}`;
+  }
+  for (const l of length) {
+    content.innerHTML += `
       <p class="each">${l}</p>
       `;
-    }
-  });
+  }
 });
 
 //
