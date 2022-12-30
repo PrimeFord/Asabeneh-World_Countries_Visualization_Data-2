@@ -2360,9 +2360,3 @@ order.addEventListener("click", () => {
     `;
   }
 });
-
-// for (let i=0 ;i<length.length;i++) {
-//   content.innerHTML += `
-//   <p class="each">${l}</p>
-//   `;
-// }
